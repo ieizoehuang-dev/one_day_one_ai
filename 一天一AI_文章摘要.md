@@ -1,8 +1,8 @@
 # 一天一AI — 文章摘要總覽
 
 > 來源：[數位時代「一天一AI」專欄](https://www.bnext.com.tw/tags/%E4%B8%80%E5%A4%A9%E4%B8%80AI)  
-> 整理日期：2026-06-11  
-> 共計 3 頁、89 篇文章，涵蓋 AI 提示詞技巧、工具應用、職場效率等主題。
+> 整理日期：2026-06-12  
+> 共計 3 頁、90 篇文章，涵蓋 AI 提示詞技巧、工具應用、職場效率等主題。
 
 ---
 
@@ -10,10 +10,10 @@
 
 | 項目 | 數量 |
 |------|------|
-| 文章總數 | 89 篇 |
+| 文章總數 | 90 篇 |
 | 本次新增 | 1 篇 |
 | 主題分類 | 8 大類 |
-| 更新日期 | 2026-06-11 |
+| 更新日期 | 2026-06-12 |
 
 ---
 
@@ -37,6 +37,7 @@
 - Google產品經理原來是這樣用AI的！3步驟建立客戶人設
 
 ### 工具應用（Tools）
+- 如何用Claude做日報，自動發到你的信箱？我的踩坑紀錄＋排程教學
 - 教學｜如何用Codex批次做活動識別證？從底圖到排版成「可印刷」檔案，提示詞一次收
 - 報稅好麻煩？把「AI稅務知識包」匯入NotebookLM
 - AI簡報要做得好！Codex簡報教學：5步驟打包高質感PDF
@@ -61,6 +62,7 @@
 - 免費版Gemini變身求職神器！
 
 ### 職場效率（Workplace Productivity）
+- 如何用Claude做日報，自動發到你的信箱？我的踩坑紀錄＋排程教學
 - AI競品分析4組提示詞範本！這樣問才問得出洞察，避免你被老闆電
 - 想導入AI，同事兩手一攤說「我不會」！一年造30個自動化工具
 - 無痛跳槽新AI工具！省力心法+提示詞，不必啃教學影片
@@ -131,7 +133,8 @@
 
 | 標題 | 發布時間 | 連結 |
 |------|----------|------|
-| 華夏玻璃用1000份手稿做成「AI知識庫」，新人撞牆不必離職！3個盤點帶你複製這套傳承法 | 26分前 | [閱讀](https://www.bnext.com.tw/article/91221/ai-knowledge-transfer-manufacturing) |
+| 如何用Claude做日報，自動發到你的信箱？我的踩坑紀錄＋排程教學 | 22小時前 | [閱讀](https://www.bnext.com.tw/article/91225/claude-ai-daily-task-scheduler) |
+| 華夏玻璃用1000份手稿做成「AI知識庫」，新人撞牆不必離職！3個盤點帶你複製這套傳承法 | 1天前 | [閱讀](https://www.bnext.com.tw/article/91221/ai-knowledge-transfer-manufacturing) |
 | 教學｜如何用Codex批次做活動識別證？從底圖到排版成「可印刷」檔案，提示詞一次收 | 2天前 | [閱讀](https://www.bnext.com.tw/article/91197/ai-codex-batch-activity-badges) |
 | AI怎麼用才不會把思考外包？先不要問「意見」，可以問3件事 | 1天前 | [閱讀](https://www.bnext.com.tw/article/91196/stop-ai-thinking-for-you) |
 | 不會畫畫也能做LINE貼圖！實測ChatGPT與Codex兩種方法，一個提示詞生出整套貼圖 | 5天前 | [閱讀](https://www.bnext.com.tw/article/91139/chatgpt-line-stickers-creation-tutorial) |
