@@ -1,8 +1,8 @@
 # 一天一AI — 文章摘要總覽
 
 > 來源：[數位時代「一天一AI」專欄](https://www.bnext.com.tw/tags/%E4%B8%80%E5%A4%A9%E4%B8%80AI)  
-> 整理日期：2026-06-14  
-> 共計 3 頁、90 篇文章，涵蓋 AI 提示詞技巧、工具應用、職場效率等主題。
+> 整理日期：2026-06-16  
+> 共計 3 頁、91 篇文章，涵蓋 AI 提示詞技巧、工具應用、職場效率等主題。
 
 ---
 
@@ -10,16 +10,17 @@
 
 | 項目 | 數量 |
 |------|------|
-| 文章總數 | 90 篇 |
-| 本次新增 | 0 篇 |
+| 文章總數 | 91 篇 |
+| 本次新增 | 1 篇 |
 | 主題分類 | 8 大類 |
-| 更新日期 | 2026-06-14 |
+| 更新日期 | 2026-06-16 |
 
 ---
 
 ## 主題分類
 
 ### 提示詞技巧（Prompt Engineering）
+- 用AI挖商業飛輪！這組提示詞框架，從核心啟發、對標地圖到避坑建議一鍵生成
 - 別再給AI下 SOP！「麻瓜溝通法」，才能逼出AI全部潛能
 - 問AI「這樣好嗎」等於白問，這個終極提示詞讓AI給出好建議
 - Claude、ChatGPT語音輸入這樣用！讓AI幫你生出最強提示詞
@@ -133,7 +134,8 @@
 
 | 標題 | 發布時間 | 連結 |
 |------|----------|------|
-| 如何用Claude做日報，自動發到你的信箱？我的踩坑紀錄＋排程教學 | 3天前 | [閱讀](https://www.bnext.com.tw/article/91225/claude-ai-daily-task-scheduler) |
+| 用AI挖商業飛輪！這組提示詞框架，從核心啟發、對標地圖到避坑建議一鍵生成 | 22小時前 | [閱讀](https://www.bnext.com.tw/article/91245/ai-prompt-benchmark-business-strategy) |
+| 如何用Claude做日報，自動發到你的信箱？我的踩坑紀錄＋排程教學 | 4天前 | [閱讀](https://www.bnext.com.tw/article/91225/claude-ai-daily-task-scheduler) |
 | 華夏玻璃用1000份手稿做成「AI知識庫」，新人撞牆不必離職！3個盤點帶你複製這套傳承法 | 1天前 | [閱讀](https://www.bnext.com.tw/article/91221/ai-knowledge-transfer-manufacturing) |
 | 教學｜如何用Codex批次做活動識別證？從底圖到排版成「可印刷」檔案，提示詞一次收 | 2天前 | [閱讀](https://www.bnext.com.tw/article/91197/ai-codex-batch-activity-badges) |
 | AI怎麼用才不會把思考外包？先不要問「意見」，可以問3件事 | 1天前 | [閱讀](https://www.bnext.com.tw/article/91196/stop-ai-thinking-for-you) |
