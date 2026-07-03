@@ -7,7 +7,6 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Claude / Anthropic colour tokens ── */
 :root {
   --bg:               #1C1917;
   --bg-card:          #292524;
@@ -21,8 +20,6 @@
   --accent:           #D97757;
   --accent-hover:     #E88A65;
   --accent-dim:       rgba(217, 119, 87, 0.18);
-  --nav-arrow:        #3D3833;
-  --progress-track:   #2A2724;
 }
 
 body.light {
@@ -38,196 +35,112 @@ body.light {
   --accent:           #C86A40;
   --accent-hover:     #B85E36;
   --accent-dim:       rgba(200, 106, 64, 0.12);
-  --nav-arrow:        #D4CFC9;
-  --progress-track:   #E3DDD7;
 }
 
 body {
   font-family: 'Segoe UI', 'Microsoft JhengHei', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text-primary);
-  height: 100vh;
-  overflow: hidden;
+  line-height: 1.7;
   transition: background 0.3s, color 0.3s;
 }
 
-#deck {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+header {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 24px 44px;
+  text-align: center;
 }
-
-.slide {
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 64px 96px;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateX(60px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  pointer-events: none;
-}
-
-.slide:first-child { align-items: center; text-align: center; }
-.slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
-.slide.exit { opacity: 0; transform: translateX(-60px); pointer-events: none; }
-.slide.scrollable {
-  justify-content: flex-start;
-  padding-top: 52px;
-  padding-bottom: 40px;
-  overflow-y: auto;
-}
-
-/* scrollbar */
-.slide.scrollable::-webkit-scrollbar { width: 5px; }
-.slide.scrollable::-webkit-scrollbar-track { background: transparent; }
-.slide.scrollable::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-h1 {
-  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+header h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: 700;
-  line-height: 1.1;
   color: var(--text-primary);
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
 }
+header .subtitle {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+header .meta {
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 2;
+  max-width: 480px;
+  margin-inline: auto;
+  border-left: 3px solid var(--border);
+  padding-left: 16px;
+  text-align: left;
+}
+header .meta a { color: var(--accent); }
+header .meta strong { color: var(--text-primary); }
+
+main { max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; }
+main > section { margin-bottom: 56px; }
+
 h2 {
-  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
   font-weight: 600;
   color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 14px;
   margin-bottom: 20px;
-  margin-top: 4px;
-  letter-spacing: -0.01em;
 }
-h3 {
-  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  margin-top: 16px;
-}
-p {
-  font-size: clamp(0.95rem, 1.7vw, 1.2rem);
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 14px;
-  max-width: 80ch;
-}
-ul { margin-left: 1.3em; }
-li {
-  font-size: clamp(0.82rem, 1.35vw, 1rem);
-  line-height: 1.85;
-  color: var(--text-secondary);
-  margin-bottom: 2px;
-}
-strong { color: var(--text-primary); font-weight: 600; }
+h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin: 28px 0 8px; }
+p { color: var(--text-secondary); margin-bottom: 12px; }
 a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 a:hover { color: var(--accent-hover); }
 
-.subtitle {
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  color: var(--text-muted);
-  margin-top: 6px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-.accent-bar {
-  width: 40px;
-  height: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-  margin-bottom: 24px;
-  opacity: 0.9;
-}
-
-/* ── Cover blockquote ── */
-blockquote {
-  border-left: 3px solid var(--border);
-  padding-left: 20px;
-  margin-bottom: 0;
-  line-height: 2;
-}
-blockquote p {
-  font-size: clamp(0.88rem, 1.45vw, 1.05rem);
-  color: var(--text-muted);
-  margin-bottom: 2px;
-}
-blockquote strong { color: var(--text-primary); }
-
-/* ── Stats (slide 2) ── */
-.stats-grid {
+.api-fields {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 16px;
-  width: 100%;
   margin-top: 8px;
 }
-.stat-card {
+.field {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 22px 26px;
   transition: border-color 0.2s;
 }
-.stat-card:hover { border-color: var(--accent); }
-.stat-num {
-  font-size: clamp(2rem, 4vw, 3rem);
+.field:hover { border-color: var(--accent); }
+.field .name {
+  display: block;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: var(--accent);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
-.stat-label {
-  color: var(--text-muted);
-  margin-top: 6px;
-  font-size: 0.85rem;
-}
-.stat-note {
-  margin-top: 24px;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-.stat-note .chip {
-  display: inline-block;
-  background: var(--accent-dim);
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 2px 10px;
-  border-radius: 20px;
-  margin: 0 3px;
-}
-.new-hint {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-.new-hint::before {
-  content: '';
-  display: inline-block;
-  width: 3px;
-  height: 14px;
-  background: var(--accent);
-  border-radius: 2px;
-}
+.field .desc { color: var(--text-muted); margin-top: 6px; font-size: 0.85rem; }
 
-/* ── Category grid (slide 3) ── */
+.info-box {
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+.info-box .tag {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.info-box p { color: var(--text-primary); font-size: 0.88rem; margin: 0; }
+
 .cat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
   gap: 12px;
-  width: 100%;
   margin-top: 4px;
 }
 .cat-card {
@@ -238,13 +151,7 @@ blockquote strong { color: var(--text-primary); }
   transition: border-color 0.2s, background 0.2s;
 }
 .cat-card:hover { border-color: var(--accent); background: var(--bg-hover); }
-.cat-card h3 {
-  margin-top: 0;
-  font-size: 0.85rem;
-  color: var(--accent);
-  margin-bottom: 10px;
-  letter-spacing: 0.01em;
-}
+.cat-card h3 { margin-top: 0; font-size: 0.85rem; color: var(--accent); margin-bottom: 10px; letter-spacing: 0.01em; }
 .cat-card ul { margin-left: 1em; }
 .cat-card li { font-size: 0.76rem; line-height: 1.75; color: var(--text-muted); }
 .cat-card li a {
@@ -255,13 +162,9 @@ blockquote strong { color: var(--text-primary); }
 }
 .cat-card li a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-/* ── Table ── */
 .table-wrap { width: 100%; overflow-x: auto; margin-top: 6px; }
-table { width: 100%; border-collapse: collapse; font-size: clamp(0.7rem, 1.05vw, 0.88rem); }
-thead tr {
-  background: var(--bg-thead);
-  border-bottom: 1px solid var(--accent);
-}
+table { width: 100%; border-collapse: collapse; font-size: clamp(0.75rem, 1.2vw, 0.9rem); }
+thead tr { background: var(--bg-thead); border-bottom: 1px solid var(--accent); }
 thead th {
   padding: 9px 14px;
   text-align: left;
@@ -292,17 +195,11 @@ tbody td a {
 }
 tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
 
-/* ── UI chrome ── */
-#ui {
+#themeToggle {
   position: fixed;
   top: 16px;
   right: 20px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-#themeBtn {
+  z-index: 999;
   background: var(--bg-card);
   border: 1px solid var(--border);
   color: var(--text-secondary);
@@ -315,105 +212,61 @@ tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
   transition: background 0.2s, border-color 0.2s, color 0.2s;
   letter-spacing: 0.3px;
 }
-#themeBtn:hover { border-color: var(--accent); color: var(--accent); }
-#counter {
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 2px;
-  font-family: 'Consolas', monospace;
-}
+#themeToggle:hover { border-color: var(--accent); color: var(--accent); }
 
-#progress {
-  position: fixed;
-  bottom: 0; left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--progress-track);
-  z-index: 1000;
-}
-#progressBar {
-  height: 100%;
-  background: var(--accent);
-  transition: width .35s ease;
-  opacity: 0.8;
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-#navPrev, #navNext {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 999;
-  background: transparent;
-  border: none;
-  color: var(--nav-arrow);
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 16px 10px;
-  transition: color .2s;
-  user-select: none;
+@media (max-width: 640px) {
+  .api-fields, .cat-grid { grid-template-columns: 1fr; }
 }
-#navPrev { left: 10px; }
-#navNext { right: 10px; }
-#navPrev:hover, #navNext:hover { color: var(--accent); }
 </style>
 </head>
 <body>
 
-<div id="ui">
-  <button id="themeBtn">☀ 淺色</button>
-  <span id="counter">1 / 6</span>
-</div>
+<button id="themeToggle">淺色模式</button>
 
-<div id="progress"><div id="progressBar" style="width:16.67%"></div></div>
+<header>
+  <h1>一天一AI</h1>
+  <p class="subtitle">文章摘要總覽</p>
+  <div class="meta">
+    <p>來源：<a href="https://www.bnext.com.tw/tags/%E4%B8%80%E5%A4%A9%E4%B8%80AI" target="_blank">數位時代「一天一AI」專欄</a></p>
+    <p>整理日期：2026-07-02</p>
+    <p>共計 3 頁、<strong>102 篇文章</strong></p>
+    <p>涵蓋 AI 提示詞技巧、工具應用、職場效率等主題</p>
+  </div>
+</header>
 
-<button id="navPrev">&#8249;</button>
-<button id="navNext">&#8250;</button>
+<main>
 
-<div id="deck">
-
-  <!-- Slide 1: Cover -->
-  <section class="slide active">
-    <h1>一天一AI</h1>
-    <p class="subtitle">文章摘要總覽</p>
-    <div class="accent-bar" style="margin: 28px auto 24px;"></div>
-    <blockquote style="text-align:left; max-width: 480px; margin: 0 auto;">
-      <p>來源：<a href="https://www.bnext.com.tw/tags/%E4%B8%80%E5%A4%A9%E4%B8%80AI" target="_blank">數位時代「一天一AI」專欄</a></p>
-      <p>整理日期：2026-07-02</p>
-      <p>共計 3 頁、<strong>102 篇文章</strong></p>
-      <p>涵蓋 AI 提示詞技巧、工具應用、職場效率等主題</p>
-    </blockquote>
-  </section>
-
-  <!-- Slide 2: 更新摘要 -->
-  <section class="slide">
-    <div class="accent-bar"></div>
+  <section>
     <h2>更新摘要</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-num">102</div>
-        <div class="stat-label">篇文章</div>
+    <div class="api-fields">
+      <div class="field">
+        <span class="name">102</span>
+        <div class="desc">篇文章</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">+0</div>
-        <div class="stat-label">篇本次新增</div>
+      <div class="field">
+        <span class="name">+0</span>
+        <div class="desc">篇本次新增</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">8</div>
-        <div class="stat-label">大主題分類</div>
+      <div class="field">
+        <span class="name">8</span>
+        <div class="desc">大主題分類</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num" style="font-size:clamp(1rem,2vw,1.4rem); padding-top:6px;">2026-07-02</div>
-        <div class="stat-label">本次更新日期</div>
+      <div class="field">
+        <span class="name" style="font-size:clamp(1.2rem,2.4vw,1.8rem)">2026-07-02</span>
+        <div class="desc">本次更新日期</div>
       </div>
     </div>
-    <p class="stat-note">
-      <span class="new-hint" style="display:inline-flex;">紅線標示為本次新增文章</span>
-    </p>
+    <div class="info-box">
+      <span class="tag">說明</span>
+      <p>表格列左側橘色邊框標示為本次新增文章</p>
+    </div>
   </section>
 
-  <!-- Slide 3: Category overview -->
-  <section class="slide scrollable">
-    <div class="accent-bar"></div>
+  <section>
     <h2>主題分類</h2>
     <div class="cat-grid">
       <div class="cat-card">
@@ -502,7 +355,7 @@ tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
         </ul>
       </div>
       <div class="cat-card">
-        <h3>翻譯與語言（Translation & Language）</h3>
+        <h3>翻譯與語言（Translation &amp; Language）</h3>
         <ul>
           <li><a href="https://www.bnext.com.tw/article/90644/ai-english-speaking-coach-tips" target="_blank">文藻翻譯系主任推薦！5步驟讓AI當你的英語口說家教</a></li>
           <li><a href="https://www.bnext.com.tw/article/90241/ai-ppt-translation-expert-tips" target="_blank">AI簡報中翻英，專業關鍵在這5點！翻譯系主任教你眉角</a></li>
@@ -571,16 +424,12 @@ tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
     </div>
   </section>
 
-  <!-- Slide 4: Page 1 articles (1-30) -->
-  <section class="slide scrollable">
-    <div class="accent-bar"></div>
-    <h2>第一頁</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>標題</th><th>發布時間</th><th>連結</th></tr>
-        </thead>
-        <tbody>
+    <section>
+      <h2>第一頁</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>標題</th><th>發布時間</th><th>連結</th></tr></thead>
+          <tbody>
           <tr><td>看不懂英文表格、又不想打字？ChatGPT這樣用，直接幫你輸出Word檔</td><td>6小時前</td><td><a href="https://www.bnext.com.tw/article/91391/chatgpt-voice-fill-english-form" target="_blank">閱讀</a></td></tr>
           <tr><td>收藏一堆文章永遠讀不完？這套私藏AI策展工作流，每天推400字幫你讀完</td><td>1天前</td><td><a href="https://www.bnext.com.tw/article/91377/ai-daily-reading-assistant-400-words" target="_blank">閱讀</a></td></tr>
           <tr><td>「我只是用AI，解決孩子的真實問題」他用Claude做語音練習App，一句提示詞就能開始</td><td>1小時前</td><td><a href="https://www.bnext.com.tw/article/91356/dad-claude-voice-app-selective-mutism" target="_blank">閱讀</a></td></tr>
@@ -625,21 +474,17 @@ tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
           <tr><td>ChatGPT生圖實測！複製這段萬用提示詞，一次產出5張繁中IG輪播圖</td><td>1個月前</td><td><a href="https://www.bnext.com.tw/article/90801/chatgpt-thinking-ig-carousel-guide" target="_blank">閱讀</a></td></tr>
           <tr><td>用 NotebookLM 整理 1 on 1 筆記！5 步驟教你去識別化＋套範本歸檔，免費帳號就能用</td><td>1個月前</td><td><a href="https://www.bnext.com.tw/article/90800/notebooklm-1on1-notes-guide" target="_blank">閱讀</a></td></tr>
           <tr><td>一個Chrome擴充，讓NotebookLM幫你把YouTube精華轉成大師知識庫，隨時線上請教！</td><td>1個月前</td><td><a href="https://www.bnext.com.tw/article/90747/build-a-youtube-creator-master-knowledge-base-with-notebooklm" target="_blank">閱讀</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <!-- Slide 5: Page 2 articles (31-60) -->
-  <section class="slide scrollable">
-    <div class="accent-bar"></div>
-    <h2>第二頁</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>標題</th><th>發布時間</th><th>連結</th></tr>
-        </thead>
-        <tbody>
+    <section>
+      <h2>第二頁</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>標題</th><th>發布時間</th><th>連結</th></tr></thead>
+          <tbody>
           <tr><td>AI亂講話還頭頭是道？高中老師用一套「AI-RED 框架」，教你練出識別胡說八道的「抓漏力」</td><td>1個月前</td><td><a href="https://www.bnext.com.tw/article/90750/build-ai-critical-radar-with-ai-red-framework" target="_blank">閱讀</a></td></tr>
           <tr><td>健檢報告一片紅字看不懂？醫師教你用AI先判斷急迫等級，再設計健康Check List</td><td>1個月前</td><td><a href="https://www.bnext.com.tw/article/90752/ai-health-check-report-explained-and-personal-coach" target="_blank">閱讀</a></td></tr>
           <tr><td>面試前想研究公司？學會這套「橫縱分析法」，3步驟幫你快速搞懂陌生領域</td><td>1個月前</td><td><a href="https://www.bnext.com.tw/article/90746/ai-company-research-vertical-horizontal-analysis-framework" target="_blank">閱讀</a></td></tr>
@@ -670,21 +515,17 @@ tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
           <tr><td>用Gemini追WBC中華隊賽事超方便！3步驟把賽程排進你的Google行事曆</td><td>3個月前</td><td><a href="https://www.bnext.com.tw/article/90211/wbc-gemini-google-calendar-tutorial" target="_blank">閱讀</a></td></tr>
           <tr><td>讓4個AI吵架，是產出「神級企劃」捷徑？這組提示詞快記下，行銷、產品開發都可用</td><td>3個月前</td><td><a href="https://www.bnext.com.tw/article/90199/grok-420-ai-debate-collaboration" target="_blank">閱讀</a></td></tr>
           <tr><td>有了AI，反而越來越累？3個實用「防過勞守則」，避免掉入忙碌迴圈</td><td>3個月前</td><td><a href="https://www.bnext.com.tw/article/90148/stop-ai-burnout-productivity-guide" target="_blank">閱讀</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <!-- Slide 6: Page 3 articles (61-87) -->
-  <section class="slide scrollable">
-    <div class="accent-bar"></div>
-    <h2>第三頁</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>標題</th><th>發布時間</th><th>連結</th></tr>
-        </thead>
-        <tbody>
+    <section>
+      <h2>第三頁</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>標題</th><th>發布時間</th><th>連結</th></tr></thead>
+          <tbody>
           <tr><td>實測｜30 天自學計畫，我讓 ChatGPT 當家教！完整提示詞一次看</td><td>3個月前</td><td><a href="https://www.bnext.com.tw/article/89695/ai-skill-building-30-day-plan" target="_blank">閱讀</a></td></tr>
           <tr><td>影片｜覺得ChatGPT變笨？其實是不會問！3個超強提示詞技巧，讓AI答案品質飆升</td><td>3個月前</td><td><a href="https://www.bnext.com.tw/article/84991/chatgpt-prompt-tips" target="_blank">閱讀</a></td></tr>
           <tr><td>影片｜黃仁勳也大推的學習法！一個提示詞讓ChatGPT變專屬家教，4步驟完整提示詞一次收</td><td>3個月前</td><td><a href="https://www.bnext.com.tw/article/85030/chatgpt-tutor-learning" target="_blank">閱讀</a></td></tr>
@@ -713,64 +554,22 @@ tbody td a:hover { background: var(--accent); color: var(--bg); opacity: 1; }
           <tr><td>管理者都是怎麼用AI的？日本企業訪談50人之後</td><td>6個月前</td><td><a href="https://www.bnext.com.tw/article/85287/ai-for-managers" target="_blank">閱讀</a></td></tr>
           <tr><td>開啟Google Sheet的AI公式！在試算表叫AI大量翻譯、總結</td><td>6個月前</td><td><a href="https://www.bnext.com.tw/article/85081/google-sheet-ai-function-formula" target="_blank">閱讀</a></td></tr>
           <tr><td>95％企業導入AI都失敗？4步驟找出「AI最佳切入點」</td><td>7個月前</td><td><a href="https://www.bnext.com.tw/article/85017/ai-mit-framework-success" target="_blank">閱讀</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-</div>
+</main>
 
 <script>
-const slides = document.querySelectorAll('.slide');
-const counter = document.getElementById('counter');
-const progressBar = document.getElementById('progressBar');
-const total = slides.length;
-let current = 0;
-
-function goTo(n) {
-  if (n < 0 || n >= total) return;
-  slides[current].classList.remove('active');
-  slides[current].classList.add('exit');
-  setTimeout(() => slides[current].classList.remove('exit'), 380);
-  current = n;
-  slides[current].classList.add('active');
-  slides[current].scrollTop = 0;
-  counter.textContent = `${current + 1} / ${total}`;
-  progressBar.style.width = `${((current + 1) / total) * 100}%`;
-  sessionStorage.setItem('slide', current);
-}
-
-function next() { goTo(current + 1); }
-function prev() { goTo(current - 1); }
-
-document.addEventListener('keydown', e => {
-  if (['ArrowRight','ArrowDown','PageDown'].includes(e.code)) { e.preventDefault(); next(); }
-  if (e.code === 'Space' && !e.shiftKey) { e.preventDefault(); next(); }
-  if (['ArrowLeft','ArrowUp','PageUp'].includes(e.code)) { e.preventDefault(); prev(); }
-  if (e.code === 'Home') { e.preventDefault(); goTo(0); }
-  if (e.code === 'End')  { e.preventDefault(); goTo(total - 1); }
-  if (e.code === 'KeyF') { toggleFullscreen(); }
-});
-
-document.getElementById('navNext').addEventListener('click', e => { e.stopPropagation(); next(); });
-document.getElementById('navPrev').addEventListener('click', e => { e.stopPropagation(); prev(); });
-
-const themeBtn = document.getElementById('themeBtn');
+const themeToggle = document.getElementById('themeToggle');
 function applyTheme(light) {
   document.body.classList.toggle('light', light);
-  themeBtn.textContent = light ? '☾ 深色' : '☀ 淺色';
+  themeToggle.textContent = light ? '深色模式' : '淺色模式';
   localStorage.setItem('theme', light ? 'light' : 'dark');
 }
-themeBtn.addEventListener('click', () => applyTheme(!document.body.classList.contains('light')));
+themeToggle.addEventListener('click', () => applyTheme(!document.body.classList.contains('light')));
 applyTheme(localStorage.getItem('theme') === 'light');
-
-function toggleFullscreen() {
-  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-  else document.exitFullscreen();
-}
-
-const saved = parseInt(sessionStorage.getItem('slide') || '0');
-goTo(Math.min(saved, total - 1));
 </script>
 </body>
 </html>
