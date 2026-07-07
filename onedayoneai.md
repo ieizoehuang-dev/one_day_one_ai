@@ -1,7 +1,7 @@
 # 一天一AI — 文章摘要總覽
 
 > 來源：[數位時代「一天一AI」專欄](https://www.bnext.com.tw/tags/%E4%B8%80%E5%A4%A9%E4%B8%80AI)  
-> 整理日期：2026-07-06  
+> 整理日期：2026-07-07  
 > 共計 3 頁、105 篇文章，涵蓋 AI 提示詞技巧、工具應用、職場效率等主題。
 
 ---
@@ -11,9 +11,9 @@
 | 項目 | 數量 |
 |------|------|
 | 文章總數 | 105 篇 |
-| 本次新增 | 2 篇 |
+| 本次新增 | 0 篇 |
 | 主題分類 | 8 大類 |
-| 更新日期 | 2026-07-06 |
+| 更新日期 | 2026-07-07 |
 
 ---
 
@@ -161,8 +161,8 @@
 
 | 標題 | 發布時間 | 連結 |
 |------|----------|------|
-| Fable收費前最值得衝的5件事！最狠的一招，能產出價值2,000美元的顧問等級文件 | 23分前 | [閱讀](https://www.bnext.com.tw/article/91418/claude-fable-5-tasks-before-paywall) |
-| 只問AI「我哪裡不好」等於白問！換上這3個顧問框架，表達回饋立刻變具體 | 2天前 | [閱讀](https://www.bnext.com.tw/article/91416/ai-speech-feedback-mckinsey-bcg-framework) |
+| Fable收費前最值得衝的5件事！最狠的一招，能產出價值2,000美元的顧問等級文件 | 1天前 | [閱讀](https://www.bnext.com.tw/article/91418/claude-fable-5-tasks-before-paywall) |
+| 只問AI「我哪裡不好」等於白問！換上這3個顧問框架，表達回饋立刻變具體 | 3天前 | [閱讀](https://www.bnext.com.tw/article/91416/ai-speech-feedback-mckinsey-bcg-framework) |
 | 不會寫程式，他用AI Studio做出飲控App！關鍵技巧是讓Gemini「分飾三角色」 | 17小時前 | [閱讀](https://www.bnext.com.tw/article/91406/ai-studio-gemini-no-code-app) |
 | 看不懂英文表格、又不想打字？ChatGPT這樣用，直接幫你輸出Word檔 | 6小時前 | [閱讀](https://www.bnext.com.tw/article/91391/chatgpt-voice-fill-english-form) |
 | 收藏一堆文章永遠讀不完？這套私藏AI策展工作流，每天推400字幫你讀完 | 1天前 | [閱讀](https://www.bnext.com.tw/article/91377/ai-daily-reading-assistant-400-words) |
